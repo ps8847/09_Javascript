@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+
+		var x = Symbol()   // syntax
+
+
+		var x = Symbol("Hello")
+		var y = Symbol("Hello")
+
+		console.log(x === y);   //not equal because symbol contains unique values
+
+
+		//example 1
+		var x = Symbol()
+		console.log(x);
+		console.log(typeof x);
+
+		//example 2
+		var x = Symbol('Hello')
+		console.log(x);
+		console.log(typeof x);
+		
+		//example 3 
+		var x = Symbol("Hello")
+		var y = Symbol("Hello")
+
+		console.log(x === y);
+
+		//example 4
+
+		let id = Symbol('Hello')
+		console.log(id);
+		alert(id) // will give error
+		alert(id.toString())
+
+		//example 5
+
+		let id = Symbol('Hello')
+		console.log(id.description);
+				
+		//example 6
+
+		let age = Symbol('age')
+
+		let user = {
+			name:'Yahoo Baba',
+			class:'Btech',
+			[age]:25
+		}
+
+		console.log(user);
+
+		//example 7
+
+		let age = Symbol('age')
+
+		let user = {
+			name:'Yahoo Baba',
+			class:'Btech',
+			[age]:25
+		}
+
+		console.log(user[age]);
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>

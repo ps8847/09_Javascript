@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<script>
+
+/*
+// normal function
+
+		function test(){
+			return "HELLO"
+		}
+
+		console.log(test())
+*/
+
+
+// async function
+
+//example 1
+		//async function test(){
+		//	return "HELLO"
+		//}
+
+		//console.log(test())
+
+//example 2
+		//async function test(){
+		//	return "HELLO"
+		//}
+
+		//test().then((result) => {
+		//	console.log(result)
+		//})
+
+//example 3
+		//let test = async () => "HELLO"
+		
+		//test().then((result) => {
+		//	console.log(result)
+		//})
+
+
+// await
+// example 4
+
+// without await
+		//async function test(){
+		//	console.log("2 : Message");
+		//	console.log("3 : Message");
+		//	console.log("4 : Message");
+		//}
+
+		//console.log("1 : Message");
+		//test();
+		//console.log("5 : Message");
+
+// with await
+		//async function test(){
+			
+		//	const response = await fetch("json/student_data.json");
+		//	const students = await response.json();
+		//	return students;
+		//}
+		
+		//method 1
+
+		//let a = test()
+		//console.log(a);
+
+		//method 2
+
+		//test().then((res) => {
+		//	console.log(res);
+		//}).catch((error) => {
+		//	console.log(error);
+		//})
+
+// with await 2
+		//async function test(){
+		//	return (await fetch("json/student_data.json")).json()
+		//}
+		
+
+		//test().then((res) => {
+		//	console.log(res);
+		//}).catch((error) => {
+		//	console.log(error);
+		//})
+
+
+// with await 2 for error handling
+		async function test(){
+			try{
+				return (await fetch("json/student_data.json")).json()
+			} catch(error){
+				console.log(error);
+			}
+		}
+		
+		test().then((res) => {
+			console.log(res);
+		})
+	</script>
+</head>
+<body>
+	
+</body>
+</html>

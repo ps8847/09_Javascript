@@ -1,0 +1,1 @@
+// 0, " ", undefiened , null, NaN, false

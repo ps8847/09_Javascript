@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <script>
+      // example 1
+
+      function* generateit() {
+        console.log("First Message");
+        console.log("Second Message");
+      }
+
+      let g = generateit();
+      console.log(g.next());
+
+      // example 2
+
+      function* generateit() {
+        console.log("First Message");
+        yield "Yield No.1";
+        console.log("Second Message");
+        yield "Yield No.2";
+      }
+
+      let g = generateit();
+      console.log(g.next());
+
+      // example 3
+
+      function* generateit() {
+        console.log("First Message");
+        yield "Yield No.1";
+        console.log("Second Message");
+        yield "Yield No.2";
+      }
+
+      let g = generateit();
+      console.log(g.next());
+      console.log(g.next());
+      console.log(g.next());
+
+      // example 4
+
+      function* generateit() {
+        yield "Yield No.1";
+        yield "Yield No.2";
+        yield "Yield No.3";
+      }
+
+      let g = generateit();
+      console.log(g.next());
+      g.next();
+      console.log(g.next());
+
+      // example 5
+
+      function* generateit() {
+        yield "Yield No.1";
+        yield "Yield No.2";
+        yield "Yield No.3";
+        yield "Yield No.4";
+        yield "Yield No.5";
+        yield "Yield No.6";
+      }
+
+      let g = generateit();
+      for (let value of g) {
+        console.log(value);
+      }
+
+      // example 6
+
+      function* generateit() {
+        let nextNum = 300;
+        while (true) {
+          yield nextNum++;
+        }
+      }
+
+      let g = generateit();
+      console.log(g.next().value);
+      console.log(g.next().value);
+      console.log(g.next().value);
+      console.log(g.next().value);
+      console.log(g.next().value);
+
+      // example 6
+
+      function* generateit() {
+        let nextNum = 300;
+        while (true) {
+          yield nextNum++;
+        }
+      }
+
+      let g = generateit();
+      console.log(g.next().value);
+      console.log(g.next().value);
+      console.log(g.next().value);
+      console.log(g.next().value);
+      console.log(g.next().value);
+
+      // example 7
+
+      function* generateit() {
+        let result = yield;
+        console.log(`Result : ${result}`);
+      }
+
+      let g = generateit();
+      g.next(500);
+
+      // example 8
+
+      function* generateit() {
+        let yArray = [yield, yield, yield];
+        console.log(`Result : ${yArray}`);
+      }
+
+      let g = generateit();
+      g.next(500);
+      g.next(600);
+      g.next(700);
+
+      // example 9
+
+      function* generateit() {
+        yield 55;
+        yield ["node", "angular", "react"];
+      }
+
+      let g = generateit();
+      console.log(g.next());
+      console.log(g.next());
+
+      // example 10
+
+      function* generateit() {
+        yield 55;
+        yield* ["node", "angular", "react"]; //will give them as separte value
+      }
+
+      let g = generateit();
+      console.log(g.next());
+      console.log(g.next());
+
+      // example 11
+
+      function* generateit() {
+        yield "PHP";
+        yield "Node";
+        yield "React";
+        yield "Angular";
+      }
+
+      let g = generateit();
+      console.log(g.next().value);
+      console.log([...g]);
+
+      // example 12
+
+      function* generateit() {
+        yield "PHP";
+        yield "Node";
+        yield "React";
+        yield "Angular";
+      }
+
+      let g = generateit();
+      console.log(g.next().value);
+      console.log(g.return("ending now"));
+    </script>
+    <title>Document</title>
+  </head>
+  <body></body>
+</html>

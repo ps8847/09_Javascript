@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script>
+		let numbers = [100, 200, 300];
+
+		console.log(numbers);
+		console.log(typeof numbers[Symbol.iterator]);
+
+		let iter = numbers[Symbol.iterator]();
+
+		//example 1
+		console.log(iter.next());
+		console.log(iter.next());
+		console.log(iter.next());
+		console.log(iter.next());
+
+		//example 2
+		iter.next()
+		console.log(iter.next());
+		console.log(iter.next());
+		
+		//example 3
+		console.log(iter.next().value);
+		console.log(iter.next().done);
+		
+		//example 4
+		let result = iter.next();
+		while(!result.done){
+			console.log(result.value);
+			result = iter.next();
+		}
+
+		//example 5
+		let str = "Yahoo Baba";
+		let iterr = str[Symbol.iterator]();
+		let resultt = iterr.next();
+
+		while(!resultt.done){
+			console.log(resultt.value);
+			resultt = iterr.next();
+		}
+
+
+		//example 6
+		function numberIterator(arr){
+			var nextNum = 0;
+			return {
+				next(){
+					if(nextNum < arr.length){
+						return{
+							value: arr[nextNum++],
+							done: false
+						}
+					} else {
+						return {
+							done: true
+						}
+					}
+				}
+			}
+		}
+
+		let numbers = [100,200,300,400,500];
+
+		let num = numberIterator(numbers);
+		console.log(num.next());
+		console.log(num.next());
+		console.log(num.next());
+		console.log(num.next());
+		console.log(num.next());
+		console.log(num.next());
+
+		console.log(num.next().value);
+		console.log(num.next().done);
+
+	</script>
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+</html>
